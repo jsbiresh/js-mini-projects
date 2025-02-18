@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: pink;
+}
+/* =================== */
+.title {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+.container {
+  width: 50%;
+  margin: 1rem auto;
+  height: 80vh;
+}
+.calculator {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+  height: 70%;
+}
+.screen {
+  display: flex;
+  justify-content: end;
+  height: 4rem;
+  align-items: center;
+}
+.keypad-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  height: 70%;
+}
+.key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  cursor: pointer;
+}
+#key-equal {
+  grid-row: 3 / 5;
+  grid-column: 5 / 6;
+}
