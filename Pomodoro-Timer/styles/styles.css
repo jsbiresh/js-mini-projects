@@ -15,6 +15,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  transition: background-color 1s ease; /* Add this line for smooth transition */
 }
 .counter-container {
   background-color: #be575c;

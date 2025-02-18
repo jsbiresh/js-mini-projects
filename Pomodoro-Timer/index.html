@@ -10,9 +10,9 @@
     <div class="container">
       <div class="counter-container">
         <div class="button-container">
-          <!-- <button id="btn-pomodoro">Pomodoro</button>
-          <button id="btn-short-break">Short Break</button>
-          <button id="btn-long-break">Long Break</button> -->
+            <button id="btn-short-break">Short Break</button>
+            <button id="btn-long-break">Long Break</button>
+          <button id="btn-pomodoro">Pomodoro</button>
         </div>
         <div class="timer-container">
           <h2 id="timer-text">02:00</h2>
@@ -23,6 +23,18 @@
       </div>
     </div>
 
-    <script src="./js/index.js"></script>
+    <script type="module" src="./js/index.js"></script>
   </body>
 </html>
+<!--
+/my-timer-project
+  ├── /js
+  │    ├── /modules
+  │    │    ├── timer.js            // Timer logic
+  │    │    ├── ui.js               // UI-related functionality (timer buttons, display)
+  │    │    └── styles.js           // Timer style management (background colors, etc.)
+  │    ├── index.js                 // Main entry point to link everything together
+  ├── /styles
+  │    └── styles.css               // Global styles
+  ├── index.html                    // HTML structure (timer buttons, display, etc.)
+-->

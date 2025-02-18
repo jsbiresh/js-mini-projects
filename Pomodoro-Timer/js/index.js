@@ -1,81 +1,67 @@
-// console.log("Jesus");
+// // console.log("Jesus");
+// // Main entry point to link everything together
 
-const timerText = document.getElementById("timer-text");
-const toggleBtn = document.getElementById("btn-toggle");
+import { setUpUI } from "./modules/ui.js";
 
-// let timeRemaining = (2 * 60) / 6;
-let timeRemaining = 1 * 60;
-let isRunning = false;
-let timer;
+document.addEventListener("DOMContentLoaded", () => {
+  setUpUI();
+});
 
-// Update Timer and Text
-function updateTimer() {
-  let minutes = Math.floor(timeRemaining / 60);
-  let seconds = timeRemaining % 60;
-  timerText.textContent = `${minutes < 10 ? "0" : ""}${minutes}:${
-    seconds < 10 ? "0" : ""
-  }${seconds}`;
-}
+// =======================================================
+// const timerText = document.getElementById("timer-text");
+// const toggleBtn = document.getElementById("btn-toggle");
 
-// Start Timer
-function startTimer() {
-  // start or resume te timer
-  isRunning = true;
-  toggleBtn.textContent = "PAUSE";
-  timer = setInterval(() => {
-    if (timeRemaining <= 0) {
-      // if timer runs out
-      clearInterval(timer);
-      toggleBtn.textContent = "START";
-      timeRemaining = (1 * 60) / 6;
-      isRunning = false;
-      updateTimer();
-    } else {
-      // if timer still in period and is paused or continuing
-      timeRemaining--;
-      updateTimer();
-    }
-  }, 1000);
-}
-// Pause Timer
-function pauseTimer() {
-  // pause the timer
-  clearInterval(timer);
-  isRunning = false;
-  toggleBtn.textContent = "START";
-}
+// let startUpTime = (1 * 60) / 6;
+// let timeRemaining = startUpTime;
+// let isRunning = false;
+// let timer;
 
-function toggleButtonFunction() {
-  if (isRunning) {
-    pauseTimer();
-  } else {
-    startTimer();
-  }
-}
+// // Update Timer and Text
+// function updateTimer() {
+//   let minutes = Math.floor(timeRemaining / 60);
+//   let seconds = timeRemaining % 60;
+//   timerText.textContent = `${minutes < 10 ? "0" : ""}${minutes}:${
+//     seconds < 10 ? "0" : ""
+//   }${seconds}`;
+// }
 
-// Event Listeners
-toggleBtn.addEventListener("click", toggleButtonFunction);
-updateTimer();
-// ==============================================
-// ==============================================
+// // // Start Timer
+// // function startTimer() {
+// //   // start or resume te timer
+// //   isRunning = true;
+// //   toggleBtn.textContent = "PAUSE";
+// //   timer = setInterval(() => {
+// //     if (timeRemaining <= 0) {
+// //       // if timer runs out
+// //       clearInterval(timer);
+// //       toggleBtn.textContent = "START";
+// //       timeRemaining = startUpTime;
+// //       isRunning = false;
+// //       updateTimer();
+// //     } else {
+// //       // if timer still in period and is paused or continuing
+// //       timeRemaining--;
+// //       updateTimer();
+// //     }
+// //   }, 1000);
+// // }
+// // Pause Timer
+// function pauseTimer() {
+//   // pause the timer
+//   clearInterval(timer);
+//   isRunning = false;
+//   toggleBtn.textContent = "START";
+// }
 
-// let timeRemaining = 25 * 60; // 25 minutes in seconds
-// let timeRemaining = 1 * 60; // 1 minutes in seconds
-
-// const timer = setInterval(() => {
-//   if (timeRemaining <= 0) {
-//     clearInterval(timer); // Stop the timer
-//     console.log("Timer complete!");
+// function toggleButtonFunction() {
+//   if (isRunning) {
+//     pauseTimer();
 //   } else {
-//     timeRemaining--;
-//     let minutes = Math.floor(timeRemaining / 60);
-//     let seconds = timeRemaining % 60;
-//     timerText.textContent = `${minutes < 10 ? "0" : ""}${minutes}:${
-//       seconds < 10 ? "0" : ""
-//     }${seconds}`;
-//     // timerText.textContent = `${minutes}:${
-//     //   seconds < 10 ? "0" : ""
-//     // }${seconds}`;
-//     console.log(`${minutes}:${seconds < 10 ? "0" : ""}${seconds}`);
+//     startTimer();
 //   }
-// }, 1000); // Execute every 1 second
+// }
+
+// // Event Listeners
+// toggleBtn.addEventListener("click", toggleButtonFunction);
+// updateTimer();
+// // ==============================================
