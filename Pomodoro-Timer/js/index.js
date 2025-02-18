@@ -4,7 +4,7 @@ const timerText = document.getElementById("timer-text");
 const toggleBtn = document.getElementById("btn-toggle");
 
 // let timeRemaining = (2 * 60) / 6;
-let timeRemaining = 2 * 60 - 30;
+let timeRemaining = 1 * 60;
 let isRunning = false;
 let timer;
 
