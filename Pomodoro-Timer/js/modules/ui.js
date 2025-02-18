@@ -1,5 +1,3 @@
-// UI-related functionality (timer buttons, display)
-
 import { startTimer, pauseTimer } from "./timer.js";
 import { setTimerStyles } from "./styles.js";
 
@@ -17,9 +15,10 @@ export function setUpUI() {
   // Set default timer to Pomodoro (25 mins)
   currentTimer = 25 * 60;
   updateTimerDisplay(currentTimer, timerText);
-  setTimerStyles("short-break");
+  setTimerStyles("pomodoro");
 
   toggleBtn.addEventListener("click", () => toggleTimer(toggleBtn, timerText));
+
   pomodoroBtn.addEventListener("click", () =>
     switchTimer(25 * 60, "pomodoro", timerText, toggleBtn)
   );
@@ -48,6 +47,8 @@ function switchTimer(newTime, style, timerText, toggleBtn) {
   currentTimer = newTime;
   setTimerStyles(style);
   updateTimerDisplay(currentTimer, timerText);
+
+  // Stop the current timer if running
   if (isRunning) {
     pauseTimer(timer);
     toggleBtn.textContent = "START";
